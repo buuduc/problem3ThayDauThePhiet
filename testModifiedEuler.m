@@ -3,7 +3,7 @@ clear all
 % function returnData = modifiedEulerX()
 
 %% input chung
-t0=1
+t0=1;
 t_max=1.6;
 h=0.2;
 %% input dx
