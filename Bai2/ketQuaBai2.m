@@ -16,18 +16,18 @@ V_bac2=f_bac2(S);
 
 %% Tao bang ket qua va tinh sai  so
 bangBac1=table(S',V',V_bac1','VariableNames',{'S','v','vXapXiBac1'});
-bangBac1.saiSo= abs((bangBac1.v-bangBac1.vXapXiBac1)./bangBac1.v);
+bangBac1.saiSo= abs((bangBac1.v-bangBac1.vXapXiBac1)./bangBac1.v)*100;
 
 bangBac2=table(S',V',V_bac2','VariableNames',{'S','v','vXapXiBac2'});
-bangBac2.saiSo= abs((bangBac2.v-bangBac2.vXapXiBac2)./bangBac2.v);
+bangBac2.saiSo= abs((bangBac2.v-bangBac2.vXapXiBac2)./bangBac2.v)*100;
 
 %% In ket qua 
-fprintf("Ket qua cua xap xi dang A+Bx: \n")
+fprintf("Ket qua cua xap xi dang A+Bx  \n")
 disp(bangBac1)
 fprintf("Ket qua sai so trung binh cua dang A+Bx: " )
 disp(mean(bangBac1.saiSo))
 fprintf("================================================ \n")
-fprintf("Ket qua cua xap xi dang A+Bx+Cx^2: \n")
+fprintf("Ket qua cua xap xi dang A+Bx+Cx^2  : \n")
 disp(bangBac2)
 fprintf("Ket qua sai so trung binh cua dang A+Bx+Cx^2: ")
 disp(mean(bangBac2.saiSo))
