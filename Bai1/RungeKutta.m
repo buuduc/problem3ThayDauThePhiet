@@ -2,12 +2,8 @@
 function returnData = RungeKutta()
 
 %% input
-g=9.8;
-m=68.1;
-c_d=0.25;
-t0=0;
-t_max=10;
-h=1;
+global g m c_d t0 t_max h
+
 %% input dv
 % Mot chut kien thuc ve vat ly, khi t=0 => vat chua di chuyen => t=0 la
 % dieu kien ban dau

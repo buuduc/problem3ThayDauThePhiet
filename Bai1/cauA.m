@@ -1,21 +1,13 @@
-function returnData = cauA()
-syms v t
-%CAUA Summary of this function goes here
-%   Detailed explanation goes here
-%% input
-g=9.8;
-m=68.1;
-c_d=0.25;
-t0=0;
-t_max=10;
-h=1;
+function [f_v,returnData] = cauA()
+syms v t C_d M
+global g m c_d t0 t_max h
+
 %% handle
 T= [t0:h:t_max]';
-dv=@(t,v) g-(c_d/m)*v.^2;
-
+dv=@(t,v) g-(C_d/M)*v.^2;
 %% Tinh toan
 f_v =v-int(dv,t); %% Lay nguyen ham cua dv theo dt 
-F_v =subs(f_v,t,T);
+F_v =subs(f_v,{t,C_d,M},{T,c_d,m});
 for i=1:length(F_v)
     resolve=solve(F_v(i),v);
     if length(resolve)>1
